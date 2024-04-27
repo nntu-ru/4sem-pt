@@ -1,7 +1,8 @@
 package organizer.iface;
 
-import organizer.util.IOCollection;
-
+/**
+ * Интерфейс для функции organizer.Task::enter
+ */
 public interface ISetter {
     boolean trySet(String line);
 }

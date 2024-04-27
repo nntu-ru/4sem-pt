@@ -4,6 +4,9 @@ import organizer.iface.IReporter;
 
 import java.io.PrintStream;
 
+/**
+ * Адаптер вывода
+ */
 public class Reporter implements IReporter {
     protected PrintStream stream;
 

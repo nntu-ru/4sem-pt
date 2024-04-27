@@ -3,6 +3,9 @@ package organizer.util;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Позволяет удобно конвертировать LocalDateTime в строку и обратно
+ */
 public class TimeFormatter {
     public static String format = "yyyy-MM-dd HH:mm";
 

@@ -3,6 +3,9 @@ package organizer.util;
 import organizer.iface.IReader;
 import organizer.iface.IReporter;
 
+/**
+ * Пара адапетров ВВОД + ВЫВОД
+ */
 public class IOCollection {
     protected IReader reader;
     protected IReporter reporter;

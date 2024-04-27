@@ -1,5 +1,8 @@
 package organizer.iface;
 
+/**
+ * Интерфейс адаптера вывода
+ */
 public interface IReporter {
     void print(String message);
     void println(String message);

@@ -5,8 +5,15 @@ import commander.util.ArgBuilder;
 
 import java.util.HashMap;
 
+/**
+ * Контроллер команд
+ */
 public class Commander {
     protected HashMap<String, ICallback> commands = new HashMap<>();
+
+    /**
+     * Регистрация команд и тд
+     */
 
     public void register(String name, ICallback cb) {
         commands.put(name, cb);
@@ -20,6 +27,10 @@ public class Commander {
         return commands.containsKey(name);
     }
 
+    /**
+     * Парсинг команды
+     * Извлекаем из линии все аргументы
+     */
     public Command process(String line) {
         if (line.isEmpty()) {
             return null;

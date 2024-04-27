@@ -3,6 +3,9 @@ import organizer.Task;
 
 import organizer.util.IOCollection;
 
+/**
+ * Фабрика представляет собой таблицу, где вместо имени класса используется строковый идентификатор.
+ */
 public class Factory {
     protected IOCollection io;
 
@@ -13,10 +16,12 @@ public class Factory {
     public Task create(String type) {
         Task task;
 
+        // Если тип пустой, то установим его на базовый класс task
         if (type.isEmpty()) {
             type = "default";
         }
 
+        // Выберем по типу
         switch (type) {
             case "default":
                 task = new Task();
@@ -28,6 +33,7 @@ public class Factory {
                 return null;
         }
 
+        // Заполним
         task.fill(io);
 
         return task;

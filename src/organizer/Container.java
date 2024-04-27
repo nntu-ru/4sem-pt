@@ -4,6 +4,10 @@ import java.time.LocalDateTime;
 import java.util.AbstractList;
 import java.util.ArrayList;
 
+/**
+ * Контейнер для задач.
+ * Представляет собой ArrayList, но при каждом добавлении элемента происходит сортировка по начальной дате задачи.
+ */
 public class Container extends AbstractList<Task> {
     protected ArrayList<Task> container = new ArrayList<>();
 

@@ -1,5 +1,8 @@
 package util;
 
+/**
+ * Декоратор с палитрой из 5 цветов
+ */
 public class Decorator {
     public static final String RESET = colour(0);
     public static final String RED = colour(31);
