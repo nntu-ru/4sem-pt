@@ -36,6 +36,11 @@ public class Logger implements ILogger {
         log("INFO", message);
     }
 
+    @Override
+    public void warning(String message) {
+        log("WARNING", message);
+    }
+
     private void log(String level, String message) {
         String formatted = getFormat();
 

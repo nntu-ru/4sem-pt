@@ -6,9 +6,13 @@ import java.time.LocalDateTime;
 
 @Component
 public class Event {
-    private String name;
-    private String place;
-    private LocalDateTime dateTime;
+    private String name = "unknown";
+    private String place = "unknown";
+    private LocalDateTime dateTime = LocalDateTime.MIN;
+
+    public Event() {
+
+    }
 
     public Event(String name, String place, LocalDateTime dateTime) {
         this.name = name;

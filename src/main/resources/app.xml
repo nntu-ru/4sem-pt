@@ -13,27 +13,11 @@
         <property name="format" value="${time} - ${level} - ${message}"/>
     </bean>
 
-    <bean id="profiler" class="org.lab03.Profiler">
+    <!-- <bean id="profiler" class="org.lab03.Profiler">
         <constructor-arg ref="logger" />
-    </bean>
+    </bean> -->
 
-    <bean id="testEvent" class="org.lab03.Event">
-        <constructor-arg value="Практика" />
-        <constructor-arg value="Кафедра" />
-        <constructor-arg>
-            <bean class="java.time.LocalDateTime" factory-method="parse">
-                <constructor-arg value="2024-07-01T14:30" />
-            </bean>
-        </constructor-arg>
-    </bean>
+    <bean id="holder" class="org.lab03.EventHolder" />
 
-    <bean id="practiceEvent" class="org.lab03.Event">
-        <constructor-arg value="Практика" />
-        <constructor-arg value="Кафедра" />
-        <constructor-arg>
-            <bean class="java.time.LocalDateTime" factory-method="parse">
-                <constructor-arg value="2024-07-01T14:30" />
-            </bean>
-        </constructor-arg>
-    </bean>
+    <bean id="event" class="org.lab03.Event" scope="prototype" />
 </beans>

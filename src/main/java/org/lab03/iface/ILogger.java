@@ -1,6 +1,7 @@
 package org.lab03.iface;
 
 public interface ILogger {
-    public void debug(String message);
-    public void info(String message);
+    void debug(String message);
+    void info(String message);
+    void warning(String message);
 }
