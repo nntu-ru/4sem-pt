@@ -38,4 +38,9 @@ public class Container extends AbstractList<Task> {
     public int size() {
         return container.size();
     }
+
+    @Override
+    public Task remove(int index) {
+        return container.remove(index);
+    }
 }
