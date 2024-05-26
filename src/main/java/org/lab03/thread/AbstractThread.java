@@ -4,10 +4,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 abstract public class AbstractThread implements Runnable {
     protected final ClassPathXmlApplicationContext ctx;
+    protected final String name;
     protected final long rate;
 
-    public AbstractThread(ClassPathXmlApplicationContext ctx, long rate) {
+    public AbstractThread(ClassPathXmlApplicationContext ctx, String name, long rate) {
         this.ctx = ctx;
+        this.name = name;
         this.rate = rate;
     }
 

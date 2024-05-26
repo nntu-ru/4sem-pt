@@ -11,16 +11,22 @@ public class Main {
         Logger logger = ctx.getBean("logger", Logger.class);
         logger.subscribe(System.out::println);
 
-        Thread th1 = new Thread(new Generator(ctx, 5));
-        Thread th2 = new Thread(new Reader(ctx, 200));
+        Thread gen1 = new Thread(new Generator(ctx, "Generator 1", 10));
 
-        th1.start();
-        th2.start();
+        Thread rd1 = new Thread(new Reader(ctx, "Reader 1", 200));
+        Thread rd2 = new Thread(new Reader(ctx, "Reader 2", 200));
+
+        gen1.start();
+
+        rd1.start();
+        rd2.start();
 
         Thread.sleep(1000);
 
-        th1.interrupt();
-        th2.interrupt();
+        gen1.interrupt();
+
+        rd1.interrupt();
+        rd2.interrupt();
 
         ctx.close();
     }

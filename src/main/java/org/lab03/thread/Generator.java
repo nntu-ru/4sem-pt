@@ -9,8 +9,8 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 public class Generator extends AbstractThread {
-    public Generator(ClassPathXmlApplicationContext ctx, long rate) {
-        super(ctx, rate);
+    public Generator(ClassPathXmlApplicationContext ctx, String name, long rate) {
+        super(ctx, name, rate);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Generator extends AbstractThread {
         event.setPlace("Ауд. " + random.nextInt(6999));
         event.setDateTime(LocalDateTime.now().plusDays(random.nextInt(20)));
 
-        logger.info("Generator: " + event);
+        // logger.info(name + ": " + event);
 
         holder.set(event);
     }

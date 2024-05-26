@@ -1,24 +1,20 @@
 package org.lab03;
 
-public class EventHolder {
-    private Event event;
+import java.util.LinkedList;
 
-    public void set(Event event) {
-        synchronized (this) {
-            this.event = event;
-            notifyAll();
-        }
+public class EventHolder {
+    private final LinkedList<Event> queue = new LinkedList<>();
+
+    public synchronized void set(Event event) {
+        queue.push(event);
+        notify();
     }
 
-    public Event get() throws InterruptedException {
-        synchronized (this) {
-            if (event == null) {
-                wait();
-            }
+    public synchronized Event get() throws InterruptedException {
+        if (queue.isEmpty()) {
+            wait();
         }
 
-        Event res = event;
-        event = null;
-        return res;
+        return queue.poll();
     }
 }

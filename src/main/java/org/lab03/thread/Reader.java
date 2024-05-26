@@ -6,8 +6,9 @@ import org.lab03.Logger;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Reader extends AbstractThread {
-    public Reader(ClassPathXmlApplicationContext ctx, long rate) {
-        super(ctx, rate);
+
+    public Reader(ClassPathXmlApplicationContext ctx, String name, long rate) {
+        super(ctx, name, rate);
     }
 
     @Override
@@ -18,10 +19,10 @@ public class Reader extends AbstractThread {
         Event event = holder.get();
 
         if (event == null) {
-            logger.warning("Reader: event is null");
+            logger.warning(name + ": event is null");
             return;
         }
 
-        logger.info("Reader: " + event);
+        logger.info(name + ": " + event);
     }
 }
